@@ -1,7 +1,5 @@
 # Todo-List in React with Zustand
 
-![React Logo](https://cdn.iconscout.com/icon...)
-
 ## Description
 
 This is an example of a Todo-List built in React using Zustand for state management.
