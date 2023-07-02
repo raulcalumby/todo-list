@@ -1,27 +1,23 @@
 import create from "zustand";
 
-interface TodoState {
-  todos: [];
-  addTodo: (description: string) => void;
-  removeTodo: (id: string) => void;
-  toggleCompletedState: (id: string) => void;
-}
-
-export const useStore = create<TodoState>((set) => ({
+export const useStore = create((set) => ({
   todos: [],
   text: '',
-  addText: (inputText: string) => {
-    set((state) => ({ 
+  addText: (inputText) => {
+    set((state) => ({
+      ...state,
       text: inputText
     }))
   },
   removeText: () => {
     set((state) => ({
+      ...state,
       text: ''
     }))
   },
-  addTodo: (description: string) => {
+  addTodo: (description) => {
     set((state) => ({
+      ...state,
       todos: [
         ...state.todos,
         {
@@ -34,20 +30,18 @@ export const useStore = create<TodoState>((set) => ({
   },
   removeTodo: (id) => {
     set((state) => ({
+      ...state,
       todos: state.todos.filter((todo) => todo.id !== id),
     }));
   },
   toggleCompletedState: (id) => {
     set((state) => ({
+      ...state,
       todos: state.todos.map((todo) =>
         todo.id === id
-          ? ({ ...todo, completed: !todo.completed } as Todo)
+          ? ({ ...todo, completed: !todo.completed })
           : todo
       ),
     }));
-  },
-
-  getTodo: () => {
-    
   }
 }));
