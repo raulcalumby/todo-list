@@ -1,4 +1,5 @@
-import { useStore } from "../../store/task";
+import useStore from "../../store/task";
+
 
 export default function Index() {
   const addText = useStore((state) => state.addText);

@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { useStore } from "../../store/task";
+import useStore from "../../store/task";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 
